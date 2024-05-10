@@ -9,7 +9,7 @@ function Search({setSelectedSymbol}) {
     const value = e.target.value;
     setQuery(value);
     try {
-      const response = await fetch(`http://localhost:3000/api/search?q=${value}`);
+      const response = await fetch(`/api/search?q=${value}`);
       const data = await response.json();
       setResults(data);
     } catch (error) {

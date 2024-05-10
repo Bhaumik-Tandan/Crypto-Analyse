@@ -12,7 +12,7 @@ function Profile() {
         >
             <img src={session?.user?.image||""} alt='profile' 
             onClick={() => signOut()}
-             style={styles.profileImage} />
+             style={{ ...styles.profileImage, objectFit: 'cover' }} />
         </div>
     )
 }

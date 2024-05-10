@@ -14,8 +14,7 @@ async function getStockData(symbol) {
 
     const queryString = Object.entries(params).map(([key, value]) => `${key}=${value}`).join('&');
 
-    // Constructing the signature
-    const signature = crypto.createHmac('sha256', 'hdl_1Ztc8ZphuQCKUcQLggs87fvTU7jsswE7ULpw0cAawOZy')
+    const signature = crypto.createHmac('sha256', process.env.BITMEX_SECRET||"")
         .update(verb + path + '?' + queryString + expires)
         .digest('hex');
 
@@ -23,7 +22,7 @@ async function getStockData(symbol) {
         const response = await axios.get(url, {
             headers: {
                 'Content-Type': 'application/json',
-                'api-key': 'dHrDSHWix7wfxtzRwwxF3xsT',
+                'api-key': process.env.BITMEX_KEY,
                 'api-signature': signature,
                 'api-expires': expires
             },

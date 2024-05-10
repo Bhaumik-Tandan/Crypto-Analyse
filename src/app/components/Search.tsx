@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { TextField, List, ListItem, ListItemText } from '@mui/material';
 
-function Search({setSelectedSymbol}) {
+function Search({setSelectedSymbol}: {setSelectedSymbol: (symbol: string) => void}){
   const [query, setQuery] = useState('');
   const [results, setResults] = useState([]);
 
-  const handleSearch = async (e) => {
+  const handleSearch = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setQuery(value);
     try {
@@ -30,7 +30,7 @@ function Search({setSelectedSymbol}) {
         sx={{ height: 40, '.MuiInputBase-root': { height: '100%' } }}
       />
       <List>
-        {results.length > 0 && results.map((item, index) => (
+        {results.length > 0 && results.map((item: { _id: string, symbol: string }, index) => (
           <ListItem key={item._id} divider onClick={()=>{
             setSelectedSymbol(item.symbol);
             setResults([]);

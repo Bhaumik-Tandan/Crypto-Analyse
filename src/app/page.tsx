@@ -48,10 +48,10 @@ function ApexChart() {
   }, [selectedSymbol]);
   return (
     <div id="chart">
+      <Auth/>
       {selectedSymbol}
       <Search setSelectedSymbol={setSelectedSymbol}/>
       <ReactApexChart options={options} series={series} type="candlestick" height={350} />
-      <Auth/>
     </div>
   );
 }

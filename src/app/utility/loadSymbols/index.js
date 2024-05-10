@@ -1,4 +1,4 @@
-const MONGO_URL = "mongodb+srv://crypto:rQmQkouPuOIiuZP2@cryptograph.s1z9wgi.mongodb.net/?retryWrites=true&w=majority&appName=Cryptograph";
+const MONGO_URL = process.env.MONGO_URL || "mongodb://localhost:27017";
 
 const axios = require('axios');
 const { MongoClient } = require('mongodb');

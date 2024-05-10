@@ -1,8 +1,6 @@
-const MONGO_URL = "mongodb+srv://crypto:rQmQkouPuOIiuZP2@cryptograph.s1z9wgi.mongodb.net/?retryWrites=true&w=majority&appName=Cryptograph";
-
 const { MongoClient } = require('mongodb');
 
-const uri = MONGO_URL;
+const uri = process.env.MONGO_URL;
 const client = new MongoClient(uri);
 
 function searchSymbol(symbol: string) {

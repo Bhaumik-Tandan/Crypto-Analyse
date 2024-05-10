@@ -1,3 +1,4 @@
+"use server";
 import {  NextApiResponse,NextApiRequest } from 'next';
 import { NextResponse,NextRequest } from 'next/server';
 import getStockData from "../../utility/getStockData";

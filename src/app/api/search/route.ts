@@ -1,3 +1,4 @@
+"use server";
 import {  NextApiResponse } from 'next';
 import { NextResponse,NextRequest } from 'next/server';
 import searchSymbol from '@/app/utility/searchSymbol';

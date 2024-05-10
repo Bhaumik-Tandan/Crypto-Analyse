@@ -1,10 +1,11 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import ReactApexChart from 'react-apexcharts';
+const ReactApexChart = dynamic(() => import("react-apexcharts"), { ssr: false });
 import axios from 'axios';
 import Search from './components/Search';
 import Auth from './components/Auth';
+import dynamic from "next/dynamic";
 
 function ApexChart() {
   const [series, setSeries] = useState([{
@@ -52,6 +53,7 @@ function ApexChart() {
       {selectedSymbol}
       <Search setSelectedSymbol={setSelectedSymbol}/>
       <ReactApexChart options={{ ...options, chart: { ...options.chart, type: "candlestick" }, title: { ...options.title, align: "left" }, xaxis: { type: "datetime" } }} series={series} type="candlestick" height={350} />
+      
     </div>
   );
 }

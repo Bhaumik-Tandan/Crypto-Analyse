@@ -1,6 +1,6 @@
 import axios from 'axios';
 import crypto from 'crypto';
-async function getStockData(symbol) {
+async function getStockData(symbol: string) {
     const verb = 'GET';
     const url = 'https://www.bitmex.com/api/v1/trade/bucketed';
     const path = '/api/v1/trade/bucketed';

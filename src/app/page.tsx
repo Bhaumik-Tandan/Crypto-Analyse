@@ -35,7 +35,7 @@ function ApexChart() {
     const fetchData = async () => {
       try {
         const response = await axios.get('/api/stocks?symbol='+selectedSymbol);
-        const formattedData = response.data.map(item => ({
+        const formattedData = response.data.map((item: any) => ({
           x: new Date(item.timestamp),
           y: [item.open, item.high, item.low, item.close]
         }));
@@ -51,7 +51,7 @@ function ApexChart() {
       <Auth/>
       {selectedSymbol}
       <Search setSelectedSymbol={setSelectedSymbol}/>
-      <ReactApexChart options={options} series={series} type="candlestick" height={350} />
+      <ReactApexChart options={{ ...options, chart: { ...options.chart, type: "candlestick" }, title: { ...options.title, align: "left" }, xaxis: { type: "datetime" } }} series={series} type="candlestick" height={350} />
     </div>
   );
 }

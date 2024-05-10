@@ -5,7 +5,7 @@ export const GET =async (req: NextRequest, res: NextApiResponse) => {
   try {
     const url = new URL(req.url);
     const symbol = url.searchParams.get('symbol');
-    const data = await getStockData(symbol);
+    const data = await getStockData(symbol||"XBTUSD");
     return NextResponse.json( data);
   } catch (error) {
     console.error(error);

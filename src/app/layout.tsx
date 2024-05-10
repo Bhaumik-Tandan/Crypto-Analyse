@@ -1,8 +1,7 @@
 "use client";
 import Providers from "./components/Providers";
 export default function RootLayout({
-  children,
-  params:{session}
+  children
 }: {
   children: React.ReactNode
 }) {

@@ -1,3 +1,4 @@
+"use server";
 const { MongoClient } = require('mongodb');
 
 const uri = process.env.MONGO_URL;

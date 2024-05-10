@@ -1,3 +1,4 @@
+"use server";
 import axios from 'axios';
 import crypto from 'crypto';
 async function getStockData(symbol: string) {

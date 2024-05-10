@@ -8,8 +8,11 @@ function Profile() {
             width: '100%',
             display: 'flex',            
             justifyContent: 'flex-end'
-        }}>
-            <img src={session.user?.image} alt='profile' onClick={() => signOut()} style={styles.profileImage} />
+        }}
+        >
+            <img src={session.user?.image} alt='profile' 
+            onClick={() => signOut()}
+             style={styles.profileImage} />
         </div>
     )
 }

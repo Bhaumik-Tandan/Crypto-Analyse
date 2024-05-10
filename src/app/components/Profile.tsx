@@ -10,7 +10,7 @@ function Profile() {
             justifyContent: 'flex-end'
         }}
         >
-            <img src={session.user?.image} alt='profile' 
+            <img src={session?.user?.image||""} alt='profile' 
             onClick={() => signOut()}
              style={styles.profileImage} />
         </div>

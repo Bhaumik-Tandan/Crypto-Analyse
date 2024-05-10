@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import ReactApexChart from 'react-apexcharts';
 import axios from 'axios';
 import Search from './components/Search';
+import Auth from './components/Auth';
 
 function ApexChart() {
   const [series, setSeries] = useState([{
@@ -50,6 +51,7 @@ function ApexChart() {
       {selectedSymbol}
       <Search setSelectedSymbol={setSelectedSymbol}/>
       <ReactApexChart options={options} series={series} type="candlestick" height={350} />
+      <Auth/>
     </div>
   );
 }
